@@ -4,7 +4,8 @@
   "description": "lineup apps",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/mocha/bin/mocha spec/index.spec.js",
+    "start": "nodemon server/index.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,11 @@
   },
   "homepage": "https://github.com/vvirgitti/lineup#readme",
   "dependencies": {
-    "express": "^4.13.1"
+    "express": "^4.13.1",
+    "mocha": "^2.2.5",
+    "supertest": "^1.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.4.0"
   }
 }
