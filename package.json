@@ -21,6 +21,7 @@
     "ejs": "^2.3.3",
     "express": "^4.13.1",
     "path": "^0.11.14",
+    "sinon": "^1.15.4",
     "supertest": "^1.0.1"
   },
   "devDependencies": {
