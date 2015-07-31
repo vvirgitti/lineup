@@ -10,9 +10,4 @@ describe('GET /', function() {
     .end(done);
   });
 
-  it('have a name "Tom"', function(){
-    
-  });
-
-
 });
