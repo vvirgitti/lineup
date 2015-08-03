@@ -19,6 +19,7 @@
   "homepage": "https://github.com/vvirgitti/lineup#readme",
   "dependencies": {
     "body-parser": "^1.13.2",
+    "chai": "^3.2.0",
     "ejs": "^2.3.3",
     "express": "^4.13.1",
     "mocha": "^2.2.5",
