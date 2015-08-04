@@ -9,19 +9,20 @@
 
   <form action="/roster" method="POST">
     Name:
-    <input type="text" name="playerName">
+    <input type="text" name="playerName" id="playerName">
     Position:
     <input type="text" name="position">
-    <input type="submit" value="Add Player">
+    <input type="submit" value="Add Player" id="submit_button">
   </form>
 
   <script>
   $(document).ready(function(){
-    document.getElementById("result").innerHTML = "You have clicked the button " +
-        
-    var playerName;
-    localStorage.setItem('playerName');
-    console.log(playerName);
+    $( "#submit_button" ).click(function() {
+      playerName = $("#playerName").val();
+      var playerName;
+      localStorage.setItem('playerName');
+      console.log(playerName);
+    });
   });
   </script>
 
