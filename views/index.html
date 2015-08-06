@@ -11,17 +11,22 @@
     $(document).ready(function() {
       $("#submit").click(function(){
         playerName = $("#playerName").val();
-        $.post("http://localhost:3000/roster", {playerName:playerName}, function(data){
+        position = $("#position").val();
+        $.post("http://localhost:3000/roster", {playerName:playerName, position:position}, function(data){
           window.location = 'http://localhost:3000/roster.html';
           });
           var heroName;
-          localStorage.setItem('heroName', JSON.stringify(playerName));
+          var posPlayer;
+          var nameAndPosition = {1:heroName, 2:posPlayer}
+          localStorage.setItem('nameAndPosition', JSON.stringify(playerName, posPlayer));
         });
        });
   </script>
 
-  Please enter name of the player:
+    Player Name:
     <input type="text" id="playerName">
+    Position:
+    <input type="text" id="position">
     <input type="button" id="submit" value="Add player">
 
   <div class="list"></div>

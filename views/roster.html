@@ -9,12 +9,15 @@
 
   <script>
   var playerName;
+  var position;
   var retrieveData = localStorage.getItem('heroName');
+  var retrieveDataPosition = localStorage.getItem('posPlayer');
   var playerName = JSON.parse(retrieveData);
+  var position = JSON.parse(retrieveDataPosition)
     // console.log(playerName);
 
   $(document).ready(function() {
-    $("div").append(playerName);
+    $("div").append(playerName, position);
   });
   </script>
 
