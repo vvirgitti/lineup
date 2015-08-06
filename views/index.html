@@ -5,26 +5,26 @@
 </head>
 
 <body>
-  <h1>"Lineup"</h1>
-
-  <form action="/roster" method="POST">
-    Name:
-    <input type="text" name="playerName" id="playerName">
-    Position:
-    <input type="text" name="position">
-    <input type="submit" value="Add Player" id="submit_button">
-  </form>
+  <h1>Lineup</h1>
 
   <script>
-  $(document).ready(function(){
-    $( "#submit_button" ).click(function() {
-      playerName = $("#playerName").val();
-      var playerName;
-      localStorage.setItem('playerName');
-      console.log(playerName);
-    });
-  });
+    $(document).ready(function() {
+      $("#submit").click(function(){
+        playerName = $("#playerName").val();
+        $.post("http://localhost:3000/roster", {playerName:playerName}, function(data){
+          window.location = 'http://localhost:3000/roster.html';
+          });
+          var heroName;
+          localStorage.setItem('heroName', JSON.stringify(playerName));
+        });
+       });
   </script>
+
+  Please enter name of the player:
+    <input type="text" id="playerName">
+    <input type="button" id="submit" value="Add player">
+
+  <div class="list"></div>
 
 </body>
 </html>

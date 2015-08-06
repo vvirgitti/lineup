@@ -5,10 +5,20 @@
 </head>
 
 <body>
-  <h1>"Roster"</h1>
+  <h1>Roster</h1>
 
+  <script>
+  var playerName;
+  var retrieveData = localStorage.getItem('heroName');
+  var playerName = JSON.parse(retrieveData);
+    // console.log(playerName);
 
+  $(document).ready(function() {
+    $("div").append(playerName);
+  });
+  </script>
 
+  <div id="rosterList"> </div>
 
 </body>
 </html>
