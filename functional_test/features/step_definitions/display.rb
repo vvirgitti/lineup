@@ -12,6 +12,21 @@ When(/^I add a name and position$/) do
   click_button('Add Player')
 end
 
-Then(/^I should the data being saved and displayed in a list$/) do
+Then(/^I should see the name of the player and the position displayed$/) do
   expect(page).to have_content("John Catch")
+end
+
+When(/^I add (\d+) names and (\d+) positions$/) do |arg1, arg2|
+  fill_in('playerName', :with => 'John')
+  fill_in('position', :with => 'Catch')
+  click_button('Add Player')
+  click_link('Add more players')
+  fill_in('playerName', :with => 'Tim')
+  fill_in('position', :with => 'Pitch')
+  click_button('Add Player')
+end
+
+
+Then(/^I should see a list of names and positions$/) do
+  expect(page).to have_content("John Tim Catch Pitch")
 end

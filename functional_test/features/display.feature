@@ -7,4 +7,9 @@ Feature: Display the interface to add new players
   Scenario: Adding a new player
     Given I am on the homepage
     When I add a name and position
-    Then I should the data being saved and displayed in a list
+    Then I should see the name of the player and the position displayed
+
+  Scenario: Adding 2 players
+    Given I am on the homepage
+    When I add 2 names and 2 positions
+    Then I should see a list of names and positions
