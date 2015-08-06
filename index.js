@@ -21,7 +21,7 @@ app.get('/', function(req, res){
 app.post('/roster', function(req, res){
   var playerName  = req.body.playerName;
   var position = req.body.position;
-  console.log('Player: ' + playerName + 'position: ' + position);
+  console.log('Player: ' + playerName + ' & position: ' + position);
   res.redirect('http://localhost:3000/roster.html');
 });
 
@@ -32,4 +32,4 @@ app.get('/roster', function(req, res){
 var port = process.env.PORT || 3000;
 
 app.listen(port);
-console.log("App running on: " + port);
+console.log('App running on: ' + port);

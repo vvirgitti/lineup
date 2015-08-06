@@ -7,21 +7,11 @@
 <body>
   <h1>Roster</h1>
 
-  <script>
-  var playerName;
-  var position;
-  var retrieveData = localStorage.getItem('heroName');
-  var retrieveDataPosition = localStorage.getItem('posPlayer');
-  var playerName = JSON.parse(retrieveData);
-  var position = JSON.parse(retrieveDataPosition)
-    // console.log(playerName);
-
-  $(document).ready(function() {
-    $("div").append(playerName, position);
-  });
-  </script>
-
   <div id="rosterList"> </div>
+
+  <script>
+  document.getElementById("rosterList").innerHTML = localStorage.getItem("Player Name" - "Position");
+  </script>
 
 </body>
 </html>

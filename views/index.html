@@ -12,13 +12,12 @@
       $("#submit").click(function(){
         playerName = $("#playerName").val();
         position = $("#position").val();
-        $.post("http://localhost:3000/roster", {playerName:playerName, position:position}, function(data){
+        $.post("http://localhost:3000/roster", {playerName:playerName, position:position}, function(playerName, position){
           window.location = 'http://localhost:3000/roster.html';
           });
-          var heroName;
-          var posPlayer;
-          var nameAndPosition = {1:heroName, 2:posPlayer}
-          localStorage.setItem('nameAndPosition', JSON.stringify(playerName, posPlayer));
+          localStorage.setItem("Player Name", playerName);
+          localStorage.setItem("Position", position);
+          alert(playerName + " " + position);
         });
        });
   </script>
