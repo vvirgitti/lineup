@@ -9,16 +9,23 @@
 
   <script>
     $(document).ready(function() {
+      var playerList;
+      var playerName;
       $("#submit").click(function(){
+        playerList = [];
         playerName = $("#playerName").val();
         position = $("#position").val();
         $.post("http://localhost:3000/roster", {playerName:playerName, position:position}, function(playerName, position){
           window.location = 'http://localhost:3000/roster.html';
+          playerList.push(playerName);
           });
           localStorage.setItem("Player Name", playerName);
           localStorage.setItem("Position", position);
           console.log(playerName + " " + position);
         });
+        setTimeout(function(){
+          console.log(playerList);
+          }, 2000);
        });
   </script>
 
