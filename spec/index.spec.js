@@ -12,10 +12,4 @@ describe('GET /', function() {
     .end(done);
   });
 
-describe('Add players to the roster page', function(){
-  it('can add 2 players to the page', function(){
-    player.addPlayer
-  });
-});
-
 });
