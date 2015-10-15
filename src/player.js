@@ -3,13 +3,16 @@ function Player (name, position, rating) {
   this.positions = [{position: position, rating: rating}]
 };
 
-function addPosition (newPosition) {
+// function addPosition (newPosition) {
+//   console.log(Player.positions);
+//   Player[positions].push(newPosition);
+// }
+
+Player.prototype.positions = function (newPosition) {
+  console.log(Player.positions);
   (Player.positions).push(newPosition);
 }
 
-// Player.addPosition = addPosition; 
+module.exports = Player;
 
-module.exports = {
-  Player: Player,
-  addPosition: addPosition
-}
+module.exports.addPosition = addPosition;

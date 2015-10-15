@@ -3,7 +3,6 @@
 var chai = require('chai');
 var expect = chai.expect;
 var Player = require('./../src/player');
-// var addPosition = Player.addPosition;
 var addPosition = require('./../src/player');
 
 
@@ -31,8 +30,8 @@ describe('Player', function () {
 
   it('can add a 2nd position', function () {
     var player = new Player('Bob', 'Catch', 4);
-    player.addPosition({position: 'Outfield', rating: 2});
-    expect(player.favouritePosition[1]).to.deep.equal({position: 'Outfield', rating: 2});
+    Player.addPosition({position: 'Outfield', rating: 2});
+    expect(player.positions[1]).to.deep.equal({position: 'Outfield', rating: 2});
   });
 
   // it('has a 2nd position', function () {
