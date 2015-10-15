@@ -1,20 +1,15 @@
-function Player (name, position, rating, secondPosition, secondRating) {
+function Player (name, position, rating) {
   this.firstName = name,
-  this.favouritePosition = {
-    position: position,
-    rating: rating
-  },
-  this.secondPosition = {
-    secondPosition: secondPosition,
-    secondRating: secondRating
-  }
+  this.positions = [{position: position, rating: rating}]
 };
 
-// this.favouritePositon = [
-//   {
-//     position: position,
-//     rating:rating
-//   }
-// ]
+function addPosition (newPosition) {
+  (Player.positions).push(newPosition);
+}
 
-module.exports = Player;
+// Player.addPosition = addPosition; 
+
+module.exports = {
+  Player: Player,
+  addPosition: addPosition
+}
