@@ -30,18 +30,9 @@ describe('Player', function () {
 
   it('can add a 2nd position', function () {
     var player = new Player('Bob', 'Catch', 4);
-    Player.addPosition({position: 'Outfield', rating: 2});
+    player.addPosition({position: 'Outfield', rating: 2});
     expect(player.positions[1]).to.deep.equal({position: 'Outfield', rating: 2});
   });
 
-  // it('has a 2nd position', function () {
-  //   var player = new Player('Bob', 'Catch', 4, 'Outfield');
-  //   expect(player.secondPosition.secondPosition).to.equal('Outfield');
-  // });
-  //
-  // it('has a rating for the 2nd position', function () {
-  //   var player = new Player('Bob', 'Catch', 4, 'Outfield', 2);
-  //   expect(player.secondPosition.secondRating).to.equal(2);
-  // });
 
 });
