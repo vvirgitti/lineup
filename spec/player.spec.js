@@ -28,7 +28,7 @@ describe('Player', function () {
     expect(player.positions[0]).to.deep.equal({position:'Catch', rating: 4})
   });
 
-  it('can add a 2nd position', function () {
+  it('can have a 2nd position', function () {
     var player = new Player('Bob', 'Catch', 4);
     player.addPosition({position: 'Outfield', rating: 2});
     expect(player.positions[1]).to.deep.equal({position: 'Outfield', rating: 2});

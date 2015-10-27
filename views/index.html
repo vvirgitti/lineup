@@ -1,13 +1,40 @@
 <!DOCTYPE html>
 <head>
-  <title>Softball Lineup Apps</title>
+  <title>Softball Lineup App</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="./../src/player.js"></script>
 </head>
 
 <body>
   <h1>Lineup</h1>
 
-  <script>
+  <form id="playerForm" action="/" method="post">
+    Player Name
+  <input name="Player Name" id="PLayer.firstName">
+    Position
+  <input name="Position" id="Player.positions.position">
+    Rating
+  <input name="Rating" id="Player.positions.rating">
+  <button>Add a new player</button>
+</form>
+
+<script>
+function myFunction() {
+    document.getElementById("frm1").submit();
+}
+</script>
+
+<!-- 
+<input id="endwk" type="range" min="1" max="50" value="7" onchange="endingwk(this.value)" />
+
+then in an "on page load" function, or anywhere after the input field
+
+<script>
+document.getElementById('endwk').value = lastwk;
+</script> -->
+
+
+  <!-- <script>
     $(document).ready(function() {
       var playerList = [];
       var playerName;
@@ -38,7 +65,7 @@
     <input type="text" id="position">
     <input type="button" id="submit" value="Add Player">
 
-  <div class="list"></div>
+  <div class="list"></div> -->
 
 </body>
 </html>

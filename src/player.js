@@ -6,7 +6,6 @@ function Player (name, position, rating) {
       rating: rating
     }
   ],
-
   this.addPosition = function(newPosition) {
     (this.positions).push(newPosition);
   }
