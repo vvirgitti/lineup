@@ -1,11 +1,11 @@
 'use strict';
 
-var express = require('express');
-var path = require('path');
+const express = require('express');
+const path = require('path');
 
-var app = module.exports = express();
+const app = module.exports = express();
 
-var bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -19,8 +19,8 @@ app.get('/', function(req, res){
 });
 
 app.post('/roster', function(req, res){
-  var playerName  = req.body.playerName;
-  var position = req.body.position;
+  const playerName  = req.body.playerName;
+  const position = req.body.position;
   console.log('Player: ' + playerName + ' & position: ' + position);
   res.redirect('http://localhost:3000/roster.html');
 });
@@ -29,7 +29,7 @@ app.get('/roster', function(req, res){
   res.send(playerName, position)
 });
 
-var port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 app.listen(port);
 console.log('App running on: ' + port);

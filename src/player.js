@@ -1,6 +1,6 @@
 'use strict';
 
-function Player (name, position, rating) {
+export default function Player (name, position, rating) {
   this.firstName = name,
   this.positions = [
     {
@@ -12,5 +12,3 @@ function Player (name, position, rating) {
     (this.positions).push(newPosition);
   }
 };
-
-module.exports = Player;
