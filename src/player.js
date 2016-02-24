@@ -1,3 +1,5 @@
+'use strict';
+
 function Player (name, position, rating) {
   this.firstName = name,
   this.positions = [
