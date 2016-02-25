@@ -1,11 +1,13 @@
 'use strict';
 
-const express = require('express');
-const path = require('path');
+require('babel-register');
+
+import express from 'express';
+import path from 'path';
+import bodyParser from 'body-parser';
 
 const app = module.exports = express();
 
-const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 

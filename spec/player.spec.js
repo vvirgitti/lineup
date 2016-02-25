@@ -1,35 +1,35 @@
 'use strict';
+require('babel-register');
 
-var chai = require('chai');
-var expect = chai.expect;
-var Player = require('./../src/player');
-var addPosition = require('./../src/player');
+import chai from 'chai';
+import {expect} from 'chai';
+import Player from './../src/player';
+import {addPosition} from './../src/player';
 
+describe('Player', () => {
 
-describe('Player', function () {
-
-  it('has a name', function () {
-    var player = new Player('Bob');
+  it('has a name', () => {
+    const player = new Player('Bob');
     expect(player.firstName).to.equal('Bob');
   });
 
-  it('has a position', function () {
-    var player = new Player('Bob','Catch');
+  it('has a position', () => {
+    const player = new Player('Bob','Catch');
     expect(player.positions[0].position).to.equal('Catch');
   });
 
-  it('has a rating', function () {
-    var player = new Player('Bob', 'Catch', 4);
+  it('has a rating', () => {
+    const player = new Player('Bob', 'Catch', 4);
     expect(player.positions[0].rating).to.equal(4);
   });
 
-  it('has a rating for a specific position', function () {
-    var player = new Player('Bob', 'Catch', 4);
+  it('has a rating for a specific position', () => {
+    const player = new Player('Bob', 'Catch', 4);
     expect(player.positions[0]).to.deep.equal({position:'Catch', rating: 4})
   });
 
-  it('can have a 2nd position', function () {
-    var player = new Player('Bob', 'Catch', 4);
+  it('can have a 2nd position', () => {
+    const player = new Player('Bob', 'Catch', 4);
     player.addPosition({position: 'Outfield', rating: 2});
     expect(player.positions[1]).to.deep.equal({position: 'Outfield', rating: 2});
   });

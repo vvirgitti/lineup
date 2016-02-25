@@ -1,14 +1,14 @@
 'use strict';
 
-export default function Player (name, position, rating) {
+require('babel-register');
+
+module.exports = function Player(name, position, rating) {
   this.firstName = name,
-  this.positions = [
-    {
-      position: position,
-      rating: rating
-    }
-  ],
-  this.addPosition = function(newPosition) {
-    (this.positions).push(newPosition);
-  }
+  this.positions = [{
+    position: position,
+    rating: rating
+  }],
+  this.addPosition = function (newPosition) {
+    this.positions.push(newPosition);
+  };
 };
