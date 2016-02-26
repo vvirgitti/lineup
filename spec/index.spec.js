@@ -1,14 +1,16 @@
 'use strict';
+
 require('babel-register');
 
-const app = require ('../index.js');
-const request = require('supertest').agent(app.listen());
-const chai = require('chai');
-const expect = chai.expect;
+var app = require ('../app.js');
+var request = require('supertest');
+var chai = require('chai');
+var expect = chai.expect;
 
-describe('GET /', () => {
-  it('/index.html should respond with 200', (done) => {
-    request.get('/index.html')
+describe('GET /', function() {
+  it('/index.html should respond with 200', function (done) {
+    request(app)
+    .get('/index.html')
     .expect(200)
     .end(done);
   });
