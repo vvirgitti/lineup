@@ -1,9 +1,9 @@
 'use strict';
-require('babel-register');
 
 import chai from 'chai';
 import {expect} from 'chai';
 import Player from './../src/player';
+let player = new Player();
 import {addPosition} from './../src/player';
 
 describe('Player', () => {

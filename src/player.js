@@ -1,14 +1,15 @@
 'use strict';
 
-require('babel-register');
+export default class Player {
+  constructor(name, position, rating) {
+    this.firstName = name,
+    this.positions = [{
+      position: position,
+      rating: rating
+    }]
+  }
 
-module.exports = function Player(name, position, rating) {
-  this.firstName = name,
-  this.positions = [{
-    position: position,
-    rating: rating
-  }],
-  this.addPosition = function (newPosition) {
+  addPosition(newPosition) {
     this.positions.push(newPosition);
   };
-};
+}

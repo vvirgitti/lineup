@@ -7,38 +7,34 @@
 <body>
   <h1>Lineup</h1>
 
-  <script>
-  $(document).ready(function() {
-    var playerList = [];
-    var playerName;
-    $("#submit").click(function(){
-      playerName = $("#playerName").val();
-      position = $("#position").val();
-      playerList.push(playerName);
-      console.log("**********")
-      console.log(playerList);
-      console.log(playerName);
-      setTimeout(function(){
-        $.post("http://localhost:3000/roster", {playerName:playerName, position:position}, function(playerName, position){
-          window.location = 'http://localhost:3000/roster.html';
-        });
-      }, 2000);
-      localStorage.setItem("Player Name", playerName);
-      localStorage.setItem("Position", position);
-      console.log("========== ");
-      console.log(playerList);
-      console.log(playerName + " " + position);
-    });
-  });
-  </script>
-
-  Player Name:
-  <input type="text" id="playerName">
-  Position:
-  <input type="text" id="position">
+  <label for="playerName">Player Name</label><input type="text" id="playerName" name="playerName">
+  <label for="position">Position</label><input type="text" id="position" name="position">
   <input type="button" id="submit" value="Add Player">
 
   <div class="list"></div>
 
+<script>
+$(document).ready(function() {
+  var playerList = [];
+  var playerName;
+  $("#submit").click(function(){
+    playerName = $("#playerName").val();
+    position = $("#position").val();
+    console.log("**********")
+    console.log(playerList);
+    console.log(playerName);
+    setTimeout(function(){
+      $.post("http://localhost:3000/roster", {playerName:playerName, position:position}, function(playerName, position){
+        window.location = 'http://localhost:3000/roster.html';
+      });
+    }, 2000);
+    localStorage.setItem("Player Name", playerName);
+    localStorage.setItem("Position", position);
+    console.log("========== ");
+    console.log(playerList);
+    console.log(playerName + " " + position);
+  });
+});
+</script>
 </body>
 </html>

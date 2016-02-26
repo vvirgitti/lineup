@@ -15,6 +15,7 @@ app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
 app.engine('html', require('ejs').renderFile);
 app.use(express.static(__dirname + '/views'));
+app.use('/lineup/src', express.static(__dirname + '/src'));
 
 app.get('/', function(req, res){
   res.sendFile('index.html', {root: __dirname + '/views'});
