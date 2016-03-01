@@ -31,7 +31,9 @@
     "babel-register": "^6.5.2",
     "chai": "^3.2.0",
     "gulp": "^3.9.0",
-    "nodemon": "^1.4.0"
+    "nodemon": "^1.4.0",
+    "grunt-nodemon": "^0.4.1",
+    "grunt-mocha-test": "^0.12.7"
   },
   "engine": "node >= 4.2.1"
 }

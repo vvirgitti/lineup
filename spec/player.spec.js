@@ -31,6 +31,7 @@ describe('Player', () => {
   it('can have a 2nd position', () => {
     const player = new Player('Bob', 'Catch', 4);
     player.addPosition({position: 'Outfield', rating: 2});
+    console.log('*'.repeat(50), player);
     expect(player.positions[1]).to.deep.equal({position: 'Outfield', rating: 2});
   });
 
