@@ -3,7 +3,7 @@
 Apps that will create softball lineups automatically!
 
 
-#Road map
+###Road map
 MVP (skateboard):
 - Fully working backend where a team can be created (and players added) and it creates a lineup
 
@@ -14,7 +14,7 @@ MVP 3 (bike):
 - Add responsive UI
 - Deploy to Heroku
 
-#Technologies used:
+###Technologies used:
 - Javascript ES6
 - Express
 - Grunt
