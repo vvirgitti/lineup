@@ -4,7 +4,7 @@
   "description": "lineup apps",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha spec/*.spec.js",
+    "test": "./node_modules/mocha/bin/mocha test/unit/*.spec.js",
     "start": "nodemon register.js",
     "build": "babel src -d src"
   },
@@ -30,10 +30,11 @@
     "babel-preset-es2015": "^6.5.0",
     "babel-register": "^6.5.2",
     "chai": "^3.2.0",
+    "grunt-mocha-test": "^0.12.7",
+    "grunt-nodemon": "^0.4.1",
     "gulp": "^3.9.0",
     "nodemon": "^1.4.0",
-    "grunt-nodemon": "^0.4.1",
-    "grunt-mocha-test": "^0.12.7"
+    "sinon": "^1.17.3"
   },
   "engine": "node >= 4.2.1"
 }

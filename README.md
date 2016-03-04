@@ -14,10 +14,12 @@ MVP 3 (bike):
 - Add responsive UI
 - Deploy to Heroku
 
-###Technologies used:
+####Technologies used:
 - Javascript ES6
+- NodeJS
 - Express
 - Grunt
 
-Testing:
+####Testing:
 - Mocha and Chai
+- Supertest
