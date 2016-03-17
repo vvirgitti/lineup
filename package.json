@@ -4,7 +4,7 @@
   "description": "lineup apps",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha test/unit/*.spec.js",
+    "test": "./node_modules/mocha/bin/mocha test/unit/**/*.spec.js",
     "start": "nodemon register.js",
     "build": "babel src -d src"
   },
@@ -19,11 +19,9 @@
   },
   "homepage": "https://github.com/vvirgitti/lineup#readme",
   "dependencies": {
+    "mongodb": "^2.1.7",
     "body-parser": "^1.13.2",
-    "express": "^4.13.1",
-    "mocha": "^2.2.5",
-    "path": "^0.11.14",
-    "supertest": "^1.0.1"
+    "express": "^4.13.1"
   },
   "devDependencies": {
     "babel-cli": "^6.5.1",
@@ -34,7 +32,10 @@
     "grunt-nodemon": "^0.4.1",
     "gulp": "^3.9.0",
     "nodemon": "^1.4.0",
-    "sinon": "^1.17.3"
+    "sinon": "^1.17.3",
+    "mocha": "^2.2.5",
+    "path": "^0.11.14",
+    "supertest": "^1.0.1"
   },
   "engine": "node >= 4.2.1"
 }
