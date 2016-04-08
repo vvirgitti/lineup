@@ -9,12 +9,20 @@ class Lineup {
   }
 
   select (roster, playerPosition) {
-     return _.filter(roster, {positions: [{position: playerPosition}]})
+    const filtered = _.filter(roster, {positions: [{position: playerPosition}]});
+
+    if (filtered.length === 1) {
+      return filtered
+    } else {
+       return sortArray(filtered)
+    }
   }
 }
 
-export default Lineup;
-
-function highestRating (roster) {
-  _.orderBy(roster, ['rating'], ['desc'])
+function sortArray (filteredRoster) {
+  return _.last(_.sortBy(filteredRoster, function (o) {
+    return o.positions[0].rating
+  }));
 }
+
+export default Lineup;

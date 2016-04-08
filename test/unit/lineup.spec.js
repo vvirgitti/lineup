@@ -35,18 +35,19 @@ describe.only('Lineup', () => {
 
   it('can select a player that is a pitch for the pitch position', () => {
     const lineup = new Lineup();
-
     expect(lineup.select(roster, 'pitch')).to.deep.equal([{firstName: 'Papi', positions: [{position: 'pitch', rating: 3}]}]);
   });
 
   it('can select the player with the highest rating for a specific position', () => {
     const lineup = new Lineup();
-
     const newPitch = {firstName: 'Tyrone', positions: [{position: 'pitch', rating: 4}]};
+    const newPitch2 = {firstName: 'April', positions: [{position: 'pitch', rating: 5}]};
+    const newPitch3 = {firstName: 'Craig', positions: [{position: 'pitch', rating: 1}]};
     roster.push(newPitch);
-    console.log(lineup.select(roster, 'pitch'));
-    expect(lineup.select(roster, 'pitch')).to.deep.equal(newPitch);
-
+    roster.push(newPitch2);
+    roster.push(newPitch3);
+    console.log('Selecting a pitcher', lineup.select(roster, 'pitch'));
+    expect(lineup.select(roster, 'pitch')).to.deep.equal(newPitch2);
   });
 
   it('knows that the minimum number of players is 10', () => {
