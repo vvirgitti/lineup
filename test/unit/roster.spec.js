@@ -2,23 +2,15 @@
 
 import chai from 'chai';
 import {expect} from 'chai';
-import sinon from 'sinon';
 
 import Roster from './../../app/roster';
 import {addPlayer} from './../../app/roster';
 import Player from './../../app/player';
 
-describe.skip('Roster', () => {
-
-  let sandbox;
+describe('Roster', () => {
 
   beforeEach( () => {
-    sandbox = sinon.sandbox.create();
     const roster = new Roster();
-  });
-
-  afterEach( () => {
-    sandbox.restore();
   });
 
   const player1 = new Player('Bob', 'Catch', 4);

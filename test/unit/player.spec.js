@@ -7,7 +7,7 @@ import Player from './../../app/player';
 import {addPosition} from './../../app/player';
 import {validateFields} from './../../app/player';
 
-describe('Player', () => {
+describe.only('Player', () => {
 
   it('has a name', () => {
     const player = new Player('Bob');

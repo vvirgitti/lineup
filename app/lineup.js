@@ -1,22 +1,33 @@
 'use strict';
 
 import _ from 'lodash';
+import roster from './roster';
 
 class Lineup {
 
-  constructor() {
-    this.pitch = {};
+  constructor(roster) {
+    this.pitch = select(roster, 'pitch')
   }
 
   select (roster, playerPosition) {
     const filtered = _.filter(roster, {positions: [{position: playerPosition}]});
+    const player = '';
 
     if (filtered.length === 1) {
-      return filtered
+      const player = filtered[0].firstName;
+      return player;
+      console.log('WHO ARE YOU', player);
+      this.pitch = player;
     } else {
-       return sortArray(filtered)
+      const player = sortArray(filtered)[0].firstName;
+       return player;
+       console.log('WHO ARE YOU 2', player);
+       this.pitch = player;
     }
+    console.log('Helllo', player);
+    return this.pitch = player;
   }
+
 }
 
 function sortArray (filteredRoster) {
