@@ -7,7 +7,7 @@ import Player from './../../app/player';
 import {addPosition} from './../../app/player';
 import {validateFields} from './../../app/player';
 
-describe.only('Player', () => {
+describe('Player', () => {
 
   it('has a name', () => {
     const player = new Player('Bob');
@@ -34,11 +34,5 @@ describe.only('Player', () => {
     player.addPosition({position: 'Outfield', rating: 2});
     expect(player.positions[1]).to.deep.equal({position: 'Outfield', rating: 2});
   });
-
-  // it('throws an error if one field is missing', () => {
-  //   const player = new Player('Bob');
-  //   console.log(player);
-  //   expect(player.validate()).to.throw(Error, 'Missing properties for player');
-  // });
 
 });

@@ -33,6 +33,10 @@ describe('Lineup', () => {
     {firstName: 'Sven', positions: [{position: 'right field', rating: 9}]}
   ];
 
+  // can add a player
+
+  // can remove a player
+
   it('can select a player from the roster that is a pitch for the pitch position', () => {
     sandbox.stub(Roster, 'playerList').returns(playerList);
     const lineup = new Lineup(roster);
