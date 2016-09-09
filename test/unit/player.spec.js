@@ -7,36 +7,25 @@ const Player = require('./../../app/player');
 
 describe('Player', () => {
 
-  it('has a name', () => {
-    const player = new Player('Bob');
+  let player;
+
+  beforeEach(() => {
+    player = new Player('Bob', 'Catch', 4);
+  });
+
+  it('has a name, a position and a rating', () => {
     expect(player.firstName).to.equal('Bob');
-  });
-
-  it('has a position', () => {
-    const player = new Player('Bob','Catch');
     expect(player.positions[0].position).to.equal('Catch');
-  });
-
-  it('has a rating', () => {
-    const player = new Player('Bob', 'Catch', 4);
     expect(player.positions[0].rating).to.equal(4);
   });
 
   it('has a rating for a specific position', () => {
-    const player = new Player('Bob', 'Catch', 4);
     expect(player.positions[0]).to.deep.equal({position:'Catch', rating: 4})
   });
 
   it('can have a 2nd position', () => {
-    const player = new Player('Bob', 'Catch', 4);
     player.addPosition({position: 'Outfield', rating: 2});
     expect(player.positions[1]).to.deep.equal({position: 'Outfield', rating: 2});
   });
-
-  // it('throws an error if one field is missing', () => {
-  //   const player = new Player('Bob');
-  //   console.log(player);
-  //   expect(player.validate()).to.throw(Error, 'Missing properties for player');
-  // });
 
 });
