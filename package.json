@@ -29,10 +29,10 @@
     "grunt-mocha-test": "^0.12.7",
     "grunt-nodemon": "^0.4.1",
     "gulp": "^3.9.0",
-    "nodemon": "^1.4.0",
-    "sinon": "^1.17.3",
     "mocha": "^2.2.5",
+    "nodemon": "^1.4.0",
     "path": "^0.11.14",
+    "sinon": "^1.17.5",
     "supertest": "^1.0.1"
   },
   "engine": "node >= 4.2.1"

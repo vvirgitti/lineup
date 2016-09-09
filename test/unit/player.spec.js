@@ -4,8 +4,6 @@ const chai = require('chai');
 const expect = require('chai').expect;
 
 const Player = require('./../../app/player');
-const addPosition = require('./../../app/player');
-const validateFields = require('./../../app/player');
 
 describe('Player', () => {
 
