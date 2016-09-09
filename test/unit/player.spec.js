@@ -1,11 +1,11 @@
 'use strict';
 
-import chai from 'chai';
-import {expect} from 'chai';
+const chai = require('chai');
+const expect = require('chai').expect;
 
-import Player from './../../app/player';
-import {addPosition} from './../../app/player';
-import {validateFields} from './../../app/player';
+const Player = require('./../../app/player');
+const addPosition = require('./../../app/player');
+const validateFields = require('./../../app/player');
 
 describe('Player', () => {
 

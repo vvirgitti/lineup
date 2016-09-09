@@ -1,11 +1,9 @@
 'use strict';
 
-require('babel-register');
-
-var app = require ('./../../app.js');
-var request = require('supertest');
-var chai = require('chai');
-var expect = chai.expect;
+const app = require ('./../../app.js');
+const request = require('supertest');
+const chai = require('chai');
+const expect = chai.expect;
 
 describe('GET /', function() {
   it('/index.html should respond with 200', function (done) {
