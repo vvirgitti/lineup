@@ -14,6 +14,16 @@ class Roster {
     this.playersList.splice(index, 1);
   }
 
+    select (roster, playerPosition) {
+    const filtered = _.filter(roster, {positions: [{position: playerPosition}]});
+
+    if (filtered.length === 1) {
+      return filtered
+    } else {
+       return sortArray(filtered)
+    }
+  }
+
 }
 
 export default Roster;

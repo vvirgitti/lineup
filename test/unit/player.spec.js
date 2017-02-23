@@ -41,4 +41,7 @@ describe('Player', () => {
   //   expect(player.validate()).to.throw(Error, 'Missing properties for player');
   // });
 
+
+  it 
+
 });
