@@ -1,15 +1,21 @@
 'use strict';
+const roster = [];
 
-function Player (name, position, rating) {
+function player (name, position, rating) {
     this.firstName = name,
     this.positions = [{
       position: position,
       rating: rating
     }]
 
-     Player.prototype.addPosition = (newPosition) => {
+     player.prototype.addPosition = (newPosition) => {
       this.positions.push(newPosition);
+    }
+
+    player.prototype.addPlayer = (player) => {
+      roster.push(player);
     }
 }
 
-module.exports = Player;
+
+module.exports = {player, roster};

@@ -1,9 +1,9 @@
 'use strict';
 
-const chai = require('chai');
 const expect = require('chai').expect;
 
-const Player = require('./../../app/player');
+const Player = require('./../../app/player').player;
+const roster = require('./../../app/player').roster;
 
 describe('Player', () => {
 
@@ -26,6 +26,12 @@ describe('Player', () => {
   it('can have a 2nd position', () => {
     player.addPosition({position: 'Outfield', rating: 2});
     expect(player.positions[1]).to.deep.equal({position: 'Outfield', rating: 2});
+  });
+
+  it('can be added to a roster', () => {
+    player.addPlayer(player);
+    expect(roster.length).to.equal(1);
+    expect(roster[0].firstName).to.equal('Bob');
   });
 
 });
