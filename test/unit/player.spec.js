@@ -2,8 +2,7 @@
 
 const expect = require('chai').expect;
 
-const Player = require('./../../app/player').player;
-const roster = require('./../../app/player').roster;
+const Player = require('./../../app/player');
 
 describe('Player', () => {
 
@@ -12,6 +11,7 @@ describe('Player', () => {
   beforeEach(() => {
     player = new Player('Bob', 'Catch', 4);
   });
+
 
   it('has a name, a position and a rating', () => {
     expect(player.firstName).to.equal('Bob');
@@ -26,12 +26,6 @@ describe('Player', () => {
   it('can have a 2nd position', () => {
     player.addPosition({position: 'Outfield', rating: 2});
     expect(player.positions[1]).to.deep.equal({position: 'Outfield', rating: 2});
-  });
-
-  it('can be added to a roster', () => {
-    player.addPlayer(player);
-    expect(roster.length).to.equal(1);
-    expect(roster[0].firstName).to.equal('Bob');
   });
 
 });
