@@ -1,8 +1,5 @@
 'use strict';
 
-
-//Roster saves the player to ElasticSearch and retrieve it from there
-
 function roster() {
     this.playersList = []
 
