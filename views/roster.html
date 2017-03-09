@@ -11,16 +11,19 @@
   <tr>
     <td>Name</td>
     <td>Position</td>
+    <td>Rating</td>
   </tr>
   <tr>
     <td id="rosterList"></td>
     <td id="rosterPosition"></td>
+    <td id="rosterRating"></td>
   </tr>
 </table>
 
   <script>
   document.getElementById("rosterList").innerHTML = localStorage.getItem("Player Name");
   document.getElementById("rosterPosition").innerHTML = localStorage.getItem("Position");
+  document.getElementById("rosterRating").innerHTML = localStorage.getItem("Rating");
   </script>
 
 </body>

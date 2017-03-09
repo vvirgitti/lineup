@@ -22,12 +22,13 @@ app.get('/', function(req, res){
 app.post('/roster', function(req, res){
   const playerName  = req.body.playerName;
   const position = req.body.position;
-  console.log('Player: ' + playerName + ' & position: ' + position);
+  const rating = req.body.rating;
+  console.log('Player: ' + playerName + ' & position: ' + position + ' & rating ' + rating);
   res.redirect('http://localhost:3000/roster.html');
 });
 
 app.get('/roster', function(req, res){
-  res.send(playerName, position)
+  res.send(playerName, position, rating)
 });
 
 module.exports = app;
