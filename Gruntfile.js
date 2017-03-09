@@ -6,7 +6,7 @@ module.exports = function (grunt) {
     pkg: grunt.file.readJSON('package.json'),
     nodemon: {
       dev: {
-        script: 'register.js'
+        script: './server/index.js'
       }
     },
     mochaTest: {

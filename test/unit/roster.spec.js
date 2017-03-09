@@ -5,7 +5,7 @@ const expect = require('chai').expect;
 
 const Roster = require('./../../app/roster');
 
-describe.only('Roster', () => {
+describe('Roster', () => {
 
   const player1 = {
     firstName: 'Bob',
@@ -46,4 +46,3 @@ describe.only('Roster', () => {
   });
 
 });
-
