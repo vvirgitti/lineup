@@ -3,7 +3,7 @@
 const sinon = require('sinon');
 const expect = require('chai').expect;
 
-const Roster = require('./../../app/roster');
+const Roster = require('./../../server/roster');
 
 describe('Roster', () => {
 

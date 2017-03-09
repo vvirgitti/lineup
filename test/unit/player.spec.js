@@ -2,7 +2,7 @@
 
 const expect = require('chai').expect;
 
-const Player = require('./../../app/player');
+const Player = require('./../../server/player');
 
 describe('Player', () => {
 
