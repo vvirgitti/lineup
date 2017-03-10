@@ -15,7 +15,6 @@ describe('GET /', function() {
     return request(app)
     .get('/index.html')
     .expect(200)
-
   });
 
 });
