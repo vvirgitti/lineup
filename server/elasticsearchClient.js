@@ -1,8 +1,12 @@
 'use strict';
 
-const elasticClient = require('./elasticsearchConnection');
+const elasticsearch = require('elasticsearch');
+const indexName = 'lineup';
 
-const indexName = "randomindex";
+const elasticClient = new elasticsearch.Client({
+    host: 'localhost:9300',
+    log: 'info'
+});
 
 function deleteIndex() {
     return elasticClient.indices.delete({
@@ -10,35 +14,38 @@ function deleteIndex() {
     });
 }
 
-function initIndex() {
-    return elasticClient.indices.create({
+     function initIndex() {
+        return elasticClient.indices.create({
         index: indexName
     });
 }
 
-function indexExists() {
-    return elasticClient.indices.exists({
+    function indexExists () {
+        return elasticClient.indices.exists({
         index: indexName
-    });
-}
+    })
+    }
 
 function initMapping() {
     return elasticClient.indices.putMapping({
         index: indexName,
         type: "document",
         body: {
-            properties: {
-                title: { type: "string" },
-                content: { type: "string" },
-                suggest: {
-                    type: "completion",
-                    analyzer: "simple",
-                    search_analyzer: "simple",
-                    payloads: true
+            "mappings": {
+                "roster": {
+                    "properties": {
+                        "name": {
+                            "type": "nested"
+
+                        },
+                        "positions": {
+                            "type": "nested"
+                        }
+                    }
                 }
             }
         }
     });
 }
 
-module.exports = {deleteIndex, initIndex, indexExists, initMapping};
+module.exports = {indexExists};

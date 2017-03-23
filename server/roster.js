@@ -1,5 +1,7 @@
 'use strict';
 
+const elasticsearch = require('./../server/elasticsearchClient');
+
 function roster() {
     this.playersList = []
 

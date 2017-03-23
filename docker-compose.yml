@@ -3,7 +3,7 @@ web:
   environment:
     - PORT=3000
     - ENV_NAME=local
-    - ELASTICSEARCH_BASEURL=http://elasticsearch:9200
+    - ELASTICSEARCH_BASEURL=http://elasticsearch:9300
     - ELASTICSEARCH_REFRESH_INTERVAL=1s
     - ELASTICSEARCH_INTELLIGENCE_INDEX=lineup
   links:

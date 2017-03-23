@@ -4,7 +4,7 @@
   "description": "lineup apps",
   "main": "./server/index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha test/unit/**/*.spec.js",
+    "test": "./node_modules/mocha/bin/mocha test/**/**/*.spec.js",
     "start": "nodemon ./server/index.js"
   },
   "repository": {
