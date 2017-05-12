@@ -2,13 +2,13 @@
 Apps that will create softball lineups automatically!
 Add your players and the app will sort out the perfect lineup for you!
 
-###How to run the app
+### How to run the app
 Start the app ```npm start```
 
 Start the test ```npm test```
 
 
-###Road map
+### Road map
 MVP (skateboard):
 - Fully working backend where a team can be created (and players added) and it creates a lineup
 
@@ -23,12 +23,12 @@ MVP 3 (bike):
 MVP 4 (car):
 - Allow different types of softball (by default it's slowpitch but should allow fastpitch)
 
-####Technologies used:
+#### Technologies used:
 - Javascript ES6
 - NodeJS
 - Express
 - Grunt
 
-####Testing:
+#### Testing:
 - Mocha and Chai
 - Supertest
