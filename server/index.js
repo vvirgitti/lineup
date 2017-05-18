@@ -1,11 +1,14 @@
 'use strict';
 
 const createAndConfigureApp = require('./app/index.js');
+const initializeElasticsearch = require('./elasticsearchClient.js').initializeElasticsearch;
+const config = require('./app/config');
 
 const {app, startApp} = createAndConfigureApp({});
 
-startApp().then(() => {
-  console.log('App is up')
+initializeElasticsearch().then(startApp)
+.then(() => {
+  console.log('App is up and running')
 })
 .catch(err => {
   console.log('Error while starting the app', err);

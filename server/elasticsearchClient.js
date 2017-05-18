@@ -1,51 +1,64 @@
 'use strict';
 
 const elasticsearch = require('elasticsearch');
-const indexName = 'lineup';
+
+const config = require('./app/config')
+
+const indexName = config.get('elasticsearch.index');
 
 const elasticClient = new elasticsearch.Client({
-    host: 'localhost:9200',
-    log: 'info'
+  host: config.get('elasticsearch.baseurl'),
+  log: 'trace'
 });
 
-function deleteIndex() {
-    return elasticClient.indices.delete({
-        index: indexName
-    });
+function initIndex(indexName) {
+  return elasticClient.indices.create({
+    index: indexName
+  });
 }
 
-     function initIndex() {
-        return elasticClient.indices.create({
-        index: indexName
-    });
+function indexExists () {
+  elasticClient.indices.exists({
+    index: indexName
+  });
 }
-
-    function indexExists () {
-        return elasticClient.indices.exists({
-        index: indexName
-    })
-    }
 
 function initMapping() {
-    return elasticClient.indices.putMapping({
-        index: indexName,
-        type: "document",
-        body: {
-            "mappings": {
-                "roster": {
-                    "properties": {
-                        "name": {
-                            "type": "nested"
+  return elasticClient.indices.putMapping({
+    index: indexName,
+    type: "document",
+    body: {
+      "mappings": {
+        "roster": {
+          "properties": {
+            "name": {
+              "type": "nested"
 
-                        },
-                        "positions": {
-                            "type": "nested"
-                        }
-                    }
-                }
+            },
+            "positions": {
+              "type": "nested"
             }
+          }
         }
-    });
+      }
+    }
+  });
 }
 
-module.exports = {indexExists};
+function initializeElasticsearch(){
+   if(!indexExists()) {
+    return initIndex().then(initMapping())
+    .catch(err => {
+      console.log('Unable to initialize Elasticsearch ', err);
+    })
+  }
+}
+
+function deleteIndex() {
+  return elasticClient.indices.delete({
+    index: indexName
+  });
+}
+
+
+module.exports = {initializeElasticsearch, initIndex};

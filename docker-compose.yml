@@ -18,7 +18,7 @@ services:
       - ./package.json:/usr/src/app/package.json
     ports:
       - "3000:3000"
-    command: ["npm", "test"]
+    command: npm start
 
   wait:
       image: waisbrot/wait
@@ -29,7 +29,7 @@ services:
 
   elasticsearch:
     image: elasticsearch:5.2.0
-    expose:
-      - "9200"
     ports:
       - "9200:9200"
+    expose:
+      - "9200"
