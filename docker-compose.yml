@@ -1,24 +1,35 @@
-web:
-  build: .
-  environment:
-    - PORT=3000
-    - ENV_NAME=local
-    - ELASTICSEARCH_BASEURL=http://elasticsearch:9300
-    - ELASTICSEARCH_REFRESH_INTERVAL=1s
-    - ELASTICSEARCH_INTELLIGENCE_INDEX=lineup
-  links:
-    - elasticsearch
-  volumes:
-    - ./server:/usr/src/app/server
-    - ./test:/usr/src/app/test
-    - ./package.json:/usr/src/app/package.json
-  ports:
-    - "3000:3000"
-  command: npm start
+version: "3"
+services:
+  web:
+    build: .
+    environment:
+      - PORT=3000
+      - ENV_NAME=local
+      - ELASTICSEARCH_BASEURL=http://elasticsearch:9200
+      - ELASTICSEARCH_REFRESH_INTERVAL=1s
+      - ELASTICSEARCH_INTELLIGENCE_INDEX=lineup
+    links:
+      - elasticsearch
+    depends_on:
+      - elasticsearch
+    volumes:
+      - ./server:/usr/src/app/server
+      - ./test:/usr/src/app/test
+      - ./package.json:/usr/src/app/package.json
+    ports:
+      - "3000:3000"
+    command: ["npm", "test"]
 
-elasticsearch:
-  image: elasticsearch:5.2.0
-  expose:
-    - "9300"
-  ports:
-    - "9300:9300"
+  wait:
+      image: waisbrot/wait
+      links:
+        - elasticsearch
+      environment:
+        - TARGETS=elasticsearch:9200
+
+  elasticsearch:
+    image: elasticsearch:5.2.0
+    expose:
+      - "9200"
+    ports:
+      - "9200:9200"

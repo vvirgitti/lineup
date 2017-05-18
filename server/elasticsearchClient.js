@@ -4,7 +4,7 @@ const elasticsearch = require('elasticsearch');
 const indexName = 'lineup';
 
 const elasticClient = new elasticsearch.Client({
-    host: 'localhost:9300',
+    host: 'localhost:9200',
     log: 'info'
 });
 
