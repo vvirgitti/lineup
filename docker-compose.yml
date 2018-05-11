@@ -28,7 +28,7 @@ services:
         - TARGETS=elasticsearch:9200
 
   elasticsearch:
-    image: elasticsearch:5.2.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:5.4.3
     ports:
       - "9200:9200"
     expose:

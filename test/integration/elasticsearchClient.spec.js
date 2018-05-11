@@ -1,19 +1,28 @@
 'use strict';
 
-const sinon = require('sinon');
 const expect = require('chai').expect;
+const elasticsearch = require('elasticsearch');
+const config = require('./../../server/app/config')
 
-const elasticsearchClient = require('./../../server/elasticsearchClient');
+const elasticsearchClient = new elasticsearch.Client({host: config.get('elasticsearch.baseurl')});
 
 describe.only('Elasticsearch client', () => {
 
-  const elasticClient = new elasticsearch.Client({
-    host: config.get('elasticsearch.baseurl'),
-    log: 'trace'
-  });
+    it('can return data', () => {
+      const player = {
+        'name': 'Sue',
+        'positions': [{
+          position: 'Pitch',
+          rating: 4
+        }]
+      };
 
-    it('can create an index', () => {
-      expect(elasticsearchClient.initIndex)
+      return elasticsearchClient.create({
+        index: config.get('elasticsearch.index'),
+        type: config.get('elasticsearch.type'),
+        id: 1,
+        body: JSON.stringify(player)
+      });
+
     });
-
 });
